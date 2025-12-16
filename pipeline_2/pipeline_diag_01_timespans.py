@@ -3,7 +3,7 @@ from pathlib import Path
 from config import SESSION_DIR, BASE, OUT
 
 # ----------------------------
-# Known hc-3 constants (typical)
+# Known hc-3 constants 
 # ----------------------------
 WHL_FS = 39.0625      # position sampling
 EEG_FS = 1250.0       # eeg sampling (you already saw this earlier)

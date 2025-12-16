@@ -3,7 +3,7 @@ import numpy as np
 from config import OUT
 from model_core import fit_poisson_means, fit_transition, fit_pi
 
-# match your CV hyperparams
+# match CV hyperparams
 BAND = 1
 ALPHA_A = 1.0
 ALPHA_MU = 0.1
