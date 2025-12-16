@@ -204,7 +204,7 @@ If you want the “core math” parts:
 
 ---
 
-## 8) Notes / limitations (honest, short)
+## 8) Notes / limitations
 - This run uses a relatively short clip (~188 s), so **duration estimates and replay significance are noisy**.
 - Some SWR events look trajectory-like, but shuffle p-values are often \(\gtrsim 0.1\) in this session (suggestive, not definitive).
 - The hitting-time compression result is meant as a **coarse timescale summary**, not a claim of strong replay significance.
