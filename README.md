@@ -135,13 +135,6 @@ C = \frac{\text{behavior hitting-time scale}}{\text{replay hitting-time scale}}.
 - Python 3.10+ recommended
 - `numpy`, `scipy`, `matplotlib`, `tqdm` (and any others used in the repo)
 
-If you use a virtual environment:
-
-```bash
-python -m venv .venv
-# activate it
-pip install -r requirements.txt
-
 
 
 ### Pipeline overview (conceptually)
