@@ -1,0 +1,68 @@
+{
+  "notes": {
+    "behavior_sequence": "Z restricted to moving bins (moving_mask.npy), then restricted to sufficiently-visited states",
+    "replay_sequence": "concatenated decoded MAP paths from swr_highres_ranked.json (z_map), then restricted to sufficiently-visited states",
+    "HMM": "geometric dwell (estimated p_stay), embedded chain from segment-boundary jumps",
+    "HSMM": "state-dependent non-geometric dwell from empirical run lengths, embedded chain from segment-boundary jumps",
+    "hitting_time_definition": "expected time (in bins) to hit target state j from start i, averaged over i!=j",
+    "smoothing": "light transition pseudocount + dwell fill for unobserved states; small ridge added to linear solves"
+  },
+  "supports": {
+    "KPOS": 50,
+    "behavior_states_used": 50,
+    "replay_states_used": 17,
+    "behavior_min_count": 50,
+    "replay_min_count": 5
+  },
+  "behavior": {
+    "hmm_bins": {
+      "mean": 60.998186130351954,
+      "median": 62.07844476380222,
+      "n": 2450
+    },
+    "hsmm_bins": {
+      "mean": 58.15726366088925,
+      "median": 59.197811560756094,
+      "n": 2450
+    },
+    "hmm_seconds": {
+      "mean": 1.219963722607039,
+      "median": 1.2415688952760444,
+      "n": 2450
+    },
+    "hsmm_seconds": {
+      "mean": 1.163145273217785,
+      "median": 1.183956231215122,
+      "n": 2450
+    }
+  },
+  "replay": {
+    "hmm_bins": {
+      "mean": 118.71740024764556,
+      "median": 122.97074372304013,
+      "n": 272
+    },
+    "hsmm_bins": {
+      "mean": 112.41758151088189,
+      "median": 114.68662217511967,
+      "n": 272
+    },
+    "hmm_seconds": {
+      "mean": 0.5935870012382278,
+      "median": 0.6148537186152007,
+      "n": 272
+    },
+    "hsmm_seconds": {
+      "mean": 0.5620879075544094,
+      "median": 0.5734331108755983,
+      "n": 272
+    }
+  },
+  "compression_factors": {
+    "C_HMM": 2.055239956505422,
+    "C_HSMM": 2.069329828279919,
+    "definition": "C = (mean pairwise hitting time in behavior seconds) / (mean pairwise hitting time in replay seconds)",
+    "delta_behavior": 0.02,
+    "delta_replay": 0.005
+  }
+}

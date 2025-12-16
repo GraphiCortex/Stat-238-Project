@@ -1,0 +1,10 @@
+evt=17 score=0.911 p=0.318 q=0.915 net=3 path=9 spikes=130 T=23
+evt=16 score=0.847 p=0.338 q=0.915 net=3 path=5 spikes=94 T=16
+evt=09 score=0.720 p=0.413 q=0.915 net=3 path=3 spikes=78 T=15
+evt=13 score=0.415 p=0.090 q=0.915 net=3 path=3 spikes=86 T=16
+evt=23 score=0.283 p=0.269 q=0.915 net=3 path=7 spikes=169 T=20
+evt=14 score=0.282 p=0.199 q=0.915 net=3 path=5 spikes=158 T=24
+evt=10 score=0.106 p=0.473 q=0.915 net=2 path=4 spikes=135 T=22
+evt=19 score=0.061 p=0.592 q=0.915 net=1 path=1 spikes=93 T=15
+evt=00 score=0.051 p=0.274 q=0.915 net=0 path=2 spikes=32 T=15
+evt=03 score=0.043 p=0.353 q=0.915 net=2 path=2 spikes=43 T=17

@@ -1,0 +1,302 @@
+[
+  {
+    "tet": 1,
+    "clu": 1,
+    "spikes_in_epoch": 5082
+  },
+  {
+    "tet": 1,
+    "clu": 4,
+    "spikes_in_epoch": 341
+  },
+  {
+    "tet": 1,
+    "clu": 5,
+    "spikes_in_epoch": 1550
+  },
+  {
+    "tet": 1,
+    "clu": 6,
+    "spikes_in_epoch": 274
+  },
+  {
+    "tet": 1,
+    "clu": 7,
+    "spikes_in_epoch": 301
+  },
+  {
+    "tet": 1,
+    "clu": 8,
+    "spikes_in_epoch": 134
+  },
+  {
+    "tet": 1,
+    "clu": 9,
+    "spikes_in_epoch": 1798
+  },
+  {
+    "tet": 1,
+    "clu": 12,
+    "spikes_in_epoch": 1888
+  },
+  {
+    "tet": 1,
+    "clu": 14,
+    "spikes_in_epoch": 865
+  },
+  {
+    "tet": 1,
+    "clu": 15,
+    "spikes_in_epoch": 5430
+  },
+  {
+    "tet": 2,
+    "clu": 1,
+    "spikes_in_epoch": 5231
+  },
+  {
+    "tet": 2,
+    "clu": 3,
+    "spikes_in_epoch": 122
+  },
+  {
+    "tet": 2,
+    "clu": 5,
+    "spikes_in_epoch": 97
+  },
+  {
+    "tet": 2,
+    "clu": 6,
+    "spikes_in_epoch": 51
+  },
+  {
+    "tet": 2,
+    "clu": 7,
+    "spikes_in_epoch": 235
+  },
+  {
+    "tet": 2,
+    "clu": 8,
+    "spikes_in_epoch": 63
+  },
+  {
+    "tet": 2,
+    "clu": 9,
+    "spikes_in_epoch": 601
+  },
+  {
+    "tet": 2,
+    "clu": 10,
+    "spikes_in_epoch": 131
+  },
+  {
+    "tet": 2,
+    "clu": 12,
+    "spikes_in_epoch": 239
+  },
+  {
+    "tet": 2,
+    "clu": 16,
+    "spikes_in_epoch": 361
+  },
+  {
+    "tet": 2,
+    "clu": 17,
+    "spikes_in_epoch": 483
+  },
+  {
+    "tet": 3,
+    "clu": 1,
+    "spikes_in_epoch": 3223
+  },
+  {
+    "tet": 3,
+    "clu": 2,
+    "spikes_in_epoch": 102
+  },
+  {
+    "tet": 3,
+    "clu": 7,
+    "spikes_in_epoch": 54
+  },
+  {
+    "tet": 3,
+    "clu": 9,
+    "spikes_in_epoch": 1790
+  },
+  {
+    "tet": 3,
+    "clu": 10,
+    "spikes_in_epoch": 90
+  },
+  {
+    "tet": 3,
+    "clu": 11,
+    "spikes_in_epoch": 603
+  },
+  {
+    "tet": 3,
+    "clu": 12,
+    "spikes_in_epoch": 156
+  },
+  {
+    "tet": 4,
+    "clu": 1,
+    "spikes_in_epoch": 3488
+  },
+  {
+    "tet": 4,
+    "clu": 8,
+    "spikes_in_epoch": 422
+  },
+  {
+    "tet": 4,
+    "clu": 9,
+    "spikes_in_epoch": 79
+  },
+  {
+    "tet": 4,
+    "clu": 14,
+    "spikes_in_epoch": 237
+  },
+  {
+    "tet": 4,
+    "clu": 16,
+    "spikes_in_epoch": 99
+  },
+  {
+    "tet": 4,
+    "clu": 17,
+    "spikes_in_epoch": 460
+  },
+  {
+    "tet": 4,
+    "clu": 18,
+    "spikes_in_epoch": 2885
+  },
+  {
+    "tet": 4,
+    "clu": 19,
+    "spikes_in_epoch": 256
+  },
+  {
+    "tet": 4,
+    "clu": 20,
+    "spikes_in_epoch": 107
+  },
+  {
+    "tet": 4,
+    "clu": 21,
+    "spikes_in_epoch": 434
+  },
+  {
+    "tet": 4,
+    "clu": 22,
+    "spikes_in_epoch": 187
+  },
+  {
+    "tet": 5,
+    "clu": 1,
+    "spikes_in_epoch": 3930
+  },
+  {
+    "tet": 5,
+    "clu": 4,
+    "spikes_in_epoch": 59
+  },
+  {
+    "tet": 5,
+    "clu": 8,
+    "spikes_in_epoch": 868
+  },
+  {
+    "tet": 5,
+    "clu": 9,
+    "spikes_in_epoch": 8071
+  },
+  {
+    "tet": 5,
+    "clu": 10,
+    "spikes_in_epoch": 8548
+  },
+  {
+    "tet": 6,
+    "clu": 1,
+    "spikes_in_epoch": 7118
+  },
+  {
+    "tet": 6,
+    "clu": 3,
+    "spikes_in_epoch": 174
+  },
+  {
+    "tet": 6,
+    "clu": 4,
+    "spikes_in_epoch": 3995
+  },
+  {
+    "tet": 6,
+    "clu": 5,
+    "spikes_in_epoch": 462
+  },
+  {
+    "tet": 6,
+    "clu": 6,
+    "spikes_in_epoch": 794
+  },
+  {
+    "tet": 6,
+    "clu": 8,
+    "spikes_in_epoch": 97
+  },
+  {
+    "tet": 6,
+    "clu": 9,
+    "spikes_in_epoch": 1254
+  },
+  {
+    "tet": 6,
+    "clu": 10,
+    "spikes_in_epoch": 549
+  },
+  {
+    "tet": 6,
+    "clu": 11,
+    "spikes_in_epoch": 175
+  },
+  {
+    "tet": 6,
+    "clu": 12,
+    "spikes_in_epoch": 163
+  },
+  {
+    "tet": 7,
+    "clu": 1,
+    "spikes_in_epoch": 5223
+  },
+  {
+    "tet": 7,
+    "clu": 4,
+    "spikes_in_epoch": 2477
+  },
+  {
+    "tet": 8,
+    "clu": 1,
+    "spikes_in_epoch": 3264
+  },
+  {
+    "tet": 8,
+    "clu": 2,
+    "spikes_in_epoch": 85
+  },
+  {
+    "tet": 8,
+    "clu": 8,
+    "spikes_in_epoch": 52
+  },
+  {
+    "tet": 8,
+    "clu": 9,
+    "spikes_in_epoch": 54
+  }
+]

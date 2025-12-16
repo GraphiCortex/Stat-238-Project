@@ -1,0 +1,49 @@
+SESSION_DIR = C:\Users\Seywe\Documents\GitHub\238\ec013.18\ec013.205
+BASE        = ec013.205
+
+=== WHL ===
+frames = 7329
+fs     = 39.0625
+dur    = 187.622400 s
+
+=== PAR (preview first 20 lines) ===
+65 16
+50 800
+9
+8 0 1 2 3 4 5 6 7
+8 8 9 10 11 12 13 14 15
+8 16 17 18 19 20 21 22 23
+7 25 26 27 28 29 30 31
+8 32 33 34 35 36 37 38 39
+8 40 41 42 43 44 45 46 47
+8 48 49 50 51 52 53 54 55
+7 56 57 58 59 60 62 63
+1 64
+
+=== SPIKE_FS (assumed/inferred) ===
+SPIKE_FS = 20000.0
+
+=== EEG (from file size) ===
+eeg file bytes  = 30484480
+int16 count     = 15242240
+Ns_guess (WHLdur*EEG_FS) = 234528
+nchan_guess = int16_count / Ns_guess = 64.9911
+nchan_round = 65
+Ns (int16_count/nchan_round) = 234496
+EEG_FS = 1250.0
+dur_eeg = 187.596800 s
+
+=== RES time ranges ===
+tet 01: res_min=148 (0.007400s), res_max=3751833 (187.591650s), span=187.584s
+tet 02: res_min=4726 (0.236300s), res_max=3751772 (187.588600s), span=187.352s
+tet 03: res_min=87 (0.004350s), res_max=3715002 (185.750100s), span=185.746s
+tet 04: res_min=540 (0.027000s), res_max=3747541 (187.377050s), span=187.350s
+tet 05: res_min=930 (0.046500s), res_max=3751718 (187.585900s), span=187.539s
+tet 06: res_min=841 (0.042050s), res_max=3751865 (187.593250s), span=187.551s
+tet 07: res_min=34 (0.001700s), res_max=3751864 (187.593200s), span=187.591s
+tet 08: res_min=1694 (0.084700s), res_max=3750980 (187.549000s), span=187.464s
+
+=== GLOBAL RES ===
+res_min_global = 34 (0.001700s)
+res_max_global = 3751865 (187.593250s)
+session span   = 187.592s = 3.127 min
