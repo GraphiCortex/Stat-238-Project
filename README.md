@@ -27,11 +27,7 @@ The pipeline:
 
 ## 2) Quick navigation for the professor (recommended order)
 
-### A) Final report / slides
-- Report (PDF / LaTeX, if included): `./report/`
-- Slides (if included): `./slides/`
-
-### B) Key outputs (figures + JSON summaries)
+### Key outputs (figures + JSON summaries)
 All outputs are written to:
 - `pipeline_2/out/`
 
