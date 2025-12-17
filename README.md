@@ -45,13 +45,13 @@ If you only want headline numbers, open:
 Example (one run):
 - Mean pairwise hitting time (behavior) ≈ **1.22 s**
 - Mean pairwise hitting time (replay) ≈ **0.59 s**
-- Compression ≈ **2.06×** (similar under HSMM)
+- Compression ≈ **2.06×**
 
 ---
 
 ## 3) Repository structure
 
-```text
+```
 .
 ├── pipeline_2/
 │   ├── step01_*.py
@@ -66,7 +66,7 @@ Example (one run):
 │   │   ├── *.npz
 │   │   └── ...
 │   └── config.py
-├── data/            # not tracked; see below
+├── data/            # not tracked
 ├── notebooks/       # optional
 └── README.md
 ```
@@ -77,92 +77,81 @@ Example (one run):
 
 ### Behavior (20 ms bins)
 - **Input:** position + spikes  
-- **Output:** place fields `λ(z,n)` and decoded sequences `\hat Z_t`  
+- **Output:** place fields λ(z,n) and decoded sequences Ẑ_t  
 - **Models:** HMM vs HSMM
 
-### SWR replay (5 ms bins within SWR windows)
+### SWR replay (5 ms bins)
 - **Input:** SWR windows + spikes  
-- **Output:** posterior over position + MAP path per SWR  
-- **Metrics:** path length, net displacement, shuffle p-values (guardrail)
+- **Output:** posterior over position + MAP path  
+- **Metrics:** path length, displacement, shuffle p-values
 
 ### Compression analysis
 - **Input:** decoded sequences (behavior vs replay)  
-- **Output:** mean all-pairs hitting-time scale (seconds) + compression factor
+- **Output:** hitting-time scale (seconds) + compression factor
 
 ---
 
 ## 5) Methods snapshot (math-first)
 
 ### Observation model (Poisson place-field decoder)
-For position bin \(z\) and neuron \(n\), the learned place field is \(\lambda_{z,n}\).  
-Given spike counts \(y_{t,n}\) in bin width \(\Delta t\):
 
-\[
-p(Y_t \mid Z_t=z)
-= \prod_{n=1}^N \text{Poisson}\!\left(y_{t,n};\lambda_{z,n}\Delta t\right).
-\]
+For position bin z and neuron n, the learned place field is λ(z,n).  
+Given spike counts y(t,n) in bin width Δt:
 
-Place fields \(\lambda_{z,n}\) are estimated from **moving behavioral bins** using occupancy-normalized spike counts.
+<p align="center">
+<img src="https://latex.codecogs.com/svg.image?p(Y_t%20%7C%20Z_t=z)%20=%20%5Cprod_%7Bn=1%7D%5EN%20%5Cmathrm%7BPoisson%7D(y_%7Bt,n%7D;%5Clambda_%7Bz,n%7D%5CDelta%20t)" />
+</p>
 
-### State dynamics prior (movement model)
-A transition prior enforces temporal continuity:
-
-\[
-p(Z_t \mid Z_{t-1}) = A_{Z_{t-1},Z_t}.
-\]
-
-For behavior, \(A\) is learned empirically from movement.  
-For SWRs, the same prior acts as a “no teleportation” constraint while decoding.
-
-### HMM vs HSMM (duration modeling)
-- **HMM:** implicit geometric dwell time (memoryless)
-- **HSMM:** explicit learned dwell-time distribution (semi-Markov)
-
-### Compression via hitting times (step06)
-We compute expected hitting times using an embedded jump chain \(Q\) and mean dwell times \(m_i\). For target state \(j\):
-
-\[
-h_j = 0,\quad
-h_i = m_i + \sum_k Q_{ik} h_k \;\;\; (i\neq j).
-\]
-
-We summarize with the mean over all \(i \neq j\), convert bins → seconds, and define:
-
-\[
-C = \frac{\text{behavior hitting-time scale}}{\text{replay hitting-time scale}}.
-\]
+Place fields are estimated from moving behavioral bins using
+occupancy-normalized spike counts.
 
 ---
 
-## 6) How to run (minimal reproducibility)
+### State dynamics prior (movement model)
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.image?p(Z_t%20%7C%20Z_%7Bt-1%7D)=A_%7BZ_%7Bt-1%7D,Z_t%7D" />
+</p>
+
+For behavior, A is learned empirically from movement.  
+For SWRs, the same prior acts as a *no-teleportation* constraint.
+
+---
+
+### HMM vs HSMM (duration modeling)
+
+- **HMM:** implicit geometric dwell time (memoryless)
+- **HSMM:** explicit learned dwell-time distribution (semi-Markov)
+
+---
+
+### Compression via hitting times (step06)
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.image?h_j=0,%5Cquad%20h_i=m_i+%5Csum_kQ_%7Bik%7Dh_k%5C;(i%5Cneq%20j)" />
+</p>
+
+Compression is defined as:
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.image?C=%5Cfrac%7B%5Ctext%7Bbehavior%20hitting-time%20scale%7D%7D%7B%5Ctext%7Breplay%20hitting-time%20scale%7D%7D" />
+</p>
+
+---
+
+## 6) How to run
 
 ### Requirements
-- Python 3.10+ recommended
-- `numpy`, `scipy`, `matplotlib`, `pandas` (if used), `tqdm` (optional)
-
-If you use a virtual environment:
+- Python 3.10+
+- numpy, scipy, matplotlib
+- pandas, tqdm (optional)
 
 ```bash
 python -m venv .venv
-# activate it (Windows: .venv\Scripts\activate, macOS/Linux: source .venv/bin/activate)
 pip install -r requirements.txt
 ```
 
-### Data layout (not tracked)
-Download hc-3 and place the session files under `data/`. One workable layout:
-
-```text
-data/
-└── ec013.205/
-    ├── ec013.205.whl
-    ├── ec013.205.eeg
-    ├── ec013.205.res.*
-    ├── ec013.205.clu.*
-    └── ...
-```
-
-### Run the pipeline
-Run scripts in order (filenames may include additional descriptors):
+### Run pipeline
 
 ```bash
 python pipeline_2/step01_*.py
@@ -173,42 +162,19 @@ python pipeline_2/step05_*.py
 python pipeline_2/step06_hitting_times_compression.py
 ```
 
-Outputs will appear in `pipeline_2/out/`.
+---
+
+## 7) Notes
+
+- Short session → noisy duration estimates
+- Compression is a coarse timescale summary
+- Not a claim of definitive replay significance
 
 ---
 
-## 7) Where the key code is
+## 8) References
 
-If you want the “core math” parts:
-
-### Poisson likelihood + decoding
-- Look in the **behavior decoding** and **SWR decoding** steps (step0X scripts)
-- Key objects: place fields `lambda[z,n]`, posterior over `Z_t`, MAP / decoded paths
-
-### HSMM vs HMM logic
-- The HSMM portions (explicit durations) live in the behavior modeling step(s)
-- Compare:
-  - decoding risk metrics (CV)
-  - duration distribution fit (KL)
-
-### Compression analysis (hitting times)
-- `pipeline_2/step06_hitting_times_compression.py`
-  - builds segments / dwell statistics
-  - estimates embedded chain `Q`
-  - solves linear systems for hitting times
-  - reports compression `C`
-
----
-
-## 8) Notes / limitations
-- This run uses a relatively short clip (~188 s), so **duration estimates and replay significance are noisy**.
-- Some SWR events look trajectory-like, but shuffle p-values are often \(\gtrsim 0.1\) in this session (suggestive, not definitive).
-- The hitting-time compression result is meant as a **coarse timescale summary**, not a claim of strong replay significance.
-
----
-
-## 9) References (minimal)
-- Rabiner (1989) — HMM tutorial  
-- Yu (2010) — HSMMs  
-- Buzsáki (2015) — sharp-wave ripples  
-- Zhang et al. (1998) — place-cell decoding framework
+- Rabiner (1989) — HMM tutorial
+- Yu (2010) — HSMMs
+- Zhang et al. (1998) — place-cell decoding
+- Buzsáki (2015) — sharp-wave ripples
