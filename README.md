@@ -99,7 +99,7 @@ For position bin z and neuron n, the learned place field is λ(z,n).
 Given spike counts y(t,n) in bin width Δt:
 
 <p align="center">
-<img src="https://latex.codecogs.com/svg.image?p(Y_t%20%7C%20Z_t=z)%20=%20%5Cprod_%7Bn=1%7D%5EN%20%5Cmathrm%7BPoisson%7D(y_%7Bt,n%7D;%5Clambda_%7Bz,n%7D%5CDelta%20t)" />
+<img src="https://latex.codecogs.com/svg.image?%5Ccolor%7Bwhite%7D%7Bp(Y_t%20%7C%20Z_t=z)%20=%20%5Cprod_%7Bn=1%7D%5EN%20%5Cmathrm%7BPoisson%7D(y_%7Bt,n%7D;%5Clambda_%7Bz,n%7D%5CDelta%20t)%7D" />
 </p>
 
 Place fields are estimated from moving behavioral bins using
@@ -110,7 +110,7 @@ occupancy-normalized spike counts.
 ### State dynamics prior (movement model)
 
 <p align="center">
-<img src="https://latex.codecogs.com/svg.image?p(Z_t%20%7C%20Z_%7Bt-1%7D)=A_%7BZ_%7Bt-1%7D,Z_t%7D" />
+<img src="https://latex.codecogs.com/svg.image?%5Ccolor%7Bwhite%7D%7Bp(Z_t%20%7C%20Z_%7Bt-1%7D)=A_%7BZ_%7Bt-1%7D,Z_t%7D%7D" />
 </p>
 
 For behavior, A is learned empirically from movement.  
@@ -128,13 +128,13 @@ For SWRs, the same prior acts as a *no-teleportation* constraint.
 ### Compression via hitting times (step06)
 
 <p align="center">
-<img src="https://latex.codecogs.com/svg.image?h_j=0,%5Cquad%20h_i=m_i+%5Csum_kQ_%7Bik%7Dh_k%5C;(i%5Cneq%20j)" />
+<img src="https://latex.codecogs.com/svg.image?%5Ccolor%7Bwhite%7D%7Bh_j=0,%5Cquad%20h_i=m_i+%5Csum_kQ_%7Bik%7Dh_k%5C;(i%5Cneq%20j)%7D" />
 </p>
 
 Compression is defined as:
 
 <p align="center">
-<img src="https://latex.codecogs.com/svg.image?C=%5Cfrac%7B%5Ctext%7Bbehavior%20hitting-time%20scale%7D%7D%7B%5Ctext%7Breplay%20hitting-time%20scale%7D%7D" />
+<img src="https://latex.codecogs.com/svg.image?%5Ccolor%7Bwhite%7D%7BC=%5Cfrac%7B%5Ctext%7Bbehavior%20hitting-time%20scale%7D%7D%7B%5Ctext%7Breplay%20hitting-time%20scale%7D%7D%7D" />
 </p>
 
 ---
